@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jakii's Portfolio</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("6nYBDFQSBE36f5CVK"); // ganti dengan user ID kamu dari dashboard
+  })();
+  
+</script>
+</head>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<body>
+
+  <header>
+    <div class="topbar">
+      <button id="toggle-dark" title="Toggle dark mode">🌙</button>
+    <div class="nav-container">
+        <button class="burger" id="burger">&#9776;</button>
+  <nav>
+      <nav id="nav-menu">
+      <ul class="nav-tabs">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" class="scroll-fade">
+    <h2>About Me</h2>
+    <p>Hi, I'm Jakii! I'm passionate about design, web programming, and building digital experiences that are simple yet impactful. With 3 years of experience in Computer and Network Engineering. Certified by BNSP as a Junior Technician of Computer Network, demonstrating strong technical skills in network configuration, troubleshooting, and maintenance. Eager to apply knowledge and practical expertise in a dynamic IT environment while continuously enhancing technical proficiency.</p>
+  </section>
+
+  <section id="skills" class="scroll-fade">
+    <h2>Skills</h2>
+    <div class="skill-bar">
+
+      <p>JavaScript</p>
+      <div class="bar"><div class="progress" style="width: 70%"></div></div>
+
+      <p>UI/UX Design</p>
+      <div class="bar"><div class="progress" style="width: 80%"></div></div>
+
+      <p>Adobe Tools</p>
+      <div class="bar"><div class="progress" style="width: 75%"></div></div>
+    </div>
+  </section>
+
+  <section id="certifications" class="scroll-fade">
+    <h2>Certifications</h2>
+
+    <div class="cert-images">
+  <div class="cert-item" data-aos="fade-up" data-aos-delay="0">
+    <img src="img/certification1.jpg" alt="BNSP">
+    <p>🎓 Graphic Design Masterclass – Udemy (2024)</p>
+  </div>
+  <div class="cert-item" data-aos="fade-up" data-aos-delay="100">
+    <img src="img/certificate1.jpg" alt="National Certificate">
+    <p>📜 JavaScript Essentials – Dicoding (2023)</p>
+  </div>
+  <div class="cert-item" data-aos="fade-up" data-aos-delay="200">
+    <img src="img/certificate2.jpg" alt="OBTN">
+    <p>🎖️ UI/UX Fundamental – Google Coursera (2023)</p>
+  </div>
+</div>
+
+  </section>
+
+  <section id="contact" class="scroll-fade">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  
+
+  <footer>
+    <p>&copy; 2025 jakiilhm. All rights reserved.</p>
+  </footer>
+
+  <!-- DARK MODE TOGGLE -->
+  <script>
+    const toggle = document.getElementById('toggle-dark');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
+
+  <!-- SCROLL ANIMATION -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- CUSTOM SCROLL FADE -->
+  <script>
+    const elements = document.querySelectorAll('.scroll-fade');
+    function checkScroll() {
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+          el.classList.add('show');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+
+     const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+
+  burger.addEventListener('click', () => {
+    navMenu.querySelector('.nav-tabs').classList.toggle('show');
+  });
+
+const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // biar ga reload
+
+    emailjs.sendForm("5906", "YOUR_TEMPLATE_ID", this)
+      .then(() => {
+        alert("Message sent successfully!");
+        form.reset(); // kosongkan form
+      }, (error) => {
+        alert("Failed to send message. Please try again.");
+        console.error(error);
+      });
+  });
+
+  </script>
+
+</body>
+</html>
