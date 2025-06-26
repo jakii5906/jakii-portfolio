@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Designed with زكي</title>
+  <title>Designed by زكي</title>
 
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -15,14 +15,27 @@
       emailjs.init("6nYBDFQSBE36f5CVK");
     })();
   </script>
+
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
 </head>
 <body>
   <header class="sticky-header">
     <div class="topbar">
-      <button id="toggle-dark" title="Toggle dark mode"></button>
-    <div class="topbar">
-      <div class="top-left">zakypf</div>
-    </div>
+       <div class="logo-left">zakypf<span class="dot">.</span></div>
+             <button class="burger" id="burger">
+                    <i class="fas fa-bars"></i>
+                    </button>
+                    
+       <nav class="navbar" id="navbar">
+         <a href="#hero">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
  
@@ -32,8 +45,8 @@
     
     <h1 class="typewriter">Hi! I'm Dzaky Ilham</h1>
 
-    <p>A Back-End Web Developer</p>
-    <p1 class="desc">I'm passionate about design, web programming, and building digital experiences that are simple yet impactful.</p1>
+    <p>A Back-end Web Developer</p>
+    <p1 class="desc">I'm passionate about design, editing, web programming, and building digital experiences that are simple yet impactful.</p1>
     <div class="social-links">
       <a href="https://github.com/zakylhm"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/jakiilhm"><i class="fab fa-linkedin"></i></a>
@@ -100,11 +113,6 @@
   <script>
     AOS.init();
 
-    const toggle = document.getElementById('toggle-dark');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-    });
-
     const elements = document.querySelectorAll('.scroll-fade');
     function checkScroll() {
       elements.forEach(el => {
@@ -134,6 +142,14 @@
           console.error(error);
         });
     });
+
+    const burger = document.getElementById('burger');
+const navbar = document.getElementById('navbar');
+
+burger.addEventListener('click', () => {
+  navbar.classList.toggle('show');
+});
+
   </script>
 </body>
 </html>
