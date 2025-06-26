@@ -732,7 +732,7 @@
   /* ketik perlahan */
   @keyframes typing {
     from { width: 0 }
-    to { width: 17ch } /* jumlah karakter diketik */
+    to { width: 16.5ch } /* jumlah karakter diketik */
     
   }
 
@@ -871,14 +871,45 @@
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     display: none; /* jangan ditimpa langsung */
     z-index: 999;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0,3s ease; transform: 0,3s ease;
   }
 
   .navbar.show {
     display: flex; /* tampil hanya saat burger diklik */
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .burger {
     display: block;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform 0.2s ease;
   }
 }
+.burger:hover {
+  transform: scale(1.2);
+}
+
+.logo-left:hover {
+  color: #4b7bec;
+  transition: color 0.3s ease;
+}
+
+.logo-left a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-left {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
 
